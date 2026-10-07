@@ -14,7 +14,7 @@ Prepared <date> for <admin name>. Nothing has been changed yet.
 
 ## Summary
 - 1 company setting · 2 roles · 3 users · 2 labels · 1 source + 2 contacts · 1 pipeline · 3 stages · 4 automations
-- ⚠️ Live site — changes apply to everyone immediately.   ← only on production
+- ⚠️ Changes apply to everyone immediately.
 
 ## Steps (in this order)
 
