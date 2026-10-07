@@ -1,0 +1,17 @@
+{
+  "name": "wequote",
+  "owner": {
+    "name": "WeTech Cloud",
+    "url": "https://github.com/WeTech-Cloud"
+  },
+  "metadata": {
+    "description": "Claude skills for WeQuote customers"
+  },
+  "plugins": [
+    {
+      "name": "wequote-crm",
+      "source": "./plugins/wequote-crm",
+      "description": "Set up the WeQuote CRM for your organisation through your browser: company settings, roles, labels, lead sources, pipelines, stages and automations — with checks, questions and a plan you approve first."
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "name": "wequote-crm",
+  "version": "1.0.0",
+  "description": "Set up the WeQuote CRM for your organisation through your browser.",
+  "author": {
+    "name": "WeTech Cloud",
+    "url": "https://github.com/WeTech-Cloud"
+  },
+  "homepage": "https://github.com/WeTech-Cloud/wequote-skills"
+}
