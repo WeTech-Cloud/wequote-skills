@@ -54,6 +54,21 @@ Claude will then:
 
 Claude never deletes anything. During setup it doesn't touch your leads, deals or quotes. When it works leads and deals, it lists every change and saves only after you approve it, asks separately before marking a deal Won or Lost, and never edits, sends or cancels a quote directly. It also never types your password.
 
+## What's new
+
+### 1.1.0
+- **Leads and deals.** Ask Claude to add a lead, link it to an existing customer or create a new one, and convert it to a deal. It can also create deals directly, move them, mark them Won or Lost, reopen them, and add notes, follow-ups, meetings, files and watchers. Every change is listed for you to approve first.
+- **Leads from a spreadsheet.** Point Claude at a CSV or Excel file. It shows a preview, skips likely duplicates, and adds the rest once you approve.
+- **CRM notifications.** Choose which CRM notifications your team gets, and through which channels, as part of setup.
+- **Quick changes.** Turn an automation on, edit one, or add a stage or label without going through the full setup.
+- **Health check and report.** A read-only check of your CRM setup, what needs attention, and a summary of your pipeline.
+- **Automation test run.** Claude creates one test deal, checks that your automations fired, then tidies up.
+- **Website lead capture guide.** Step-by-step help for getting leads from your website or Zapier into the CRM. You keep your API key to yourself.
+- **More reliable setup.** Claude carries on if your WeQuote session times out mid-run, and checks stage probabilities after saving.
+
+### 1.0.1
+- First release: CRM setup for company settings, roles, labels, lead sources, pipelines, stages and automations.
+
 ## Updates
 
 **Claude Code:**
@@ -61,5 +76,7 @@ Claude never deletes anything. During setup it doesn't touch your leads, deals o
 claude plugin marketplace update wequote
 claude plugin update wequote-crm@wequote
 ```
+
+To get updates automatically, run `/plugin` in Claude Code, open **Marketplaces**, choose **wequote** and turn on auto-update. Claude Code then updates the plugin when it starts.
 
 **Claude web or desktop:** updates show up in **Customize → Plugins**.
