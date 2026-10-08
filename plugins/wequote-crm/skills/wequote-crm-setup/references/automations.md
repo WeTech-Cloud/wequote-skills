@@ -80,7 +80,10 @@ The list above is a guide. Always read what the **template picker actually shows
    - Click **Create automation**, or **Create your first automation** when the pipeline has none.
    - Or open **Open Pipeline Map** and click **Add automation** on the stage's lane. This skips the stage picker.
 3. Dialog "How would you like to start?":
-   - **Use the guided template** opens the template list for the stage. Click **Use this** on the planned template. If it has blanks, the editor opens; otherwise it's created as a draft and stays Off.
+   - **Use the guided template** opens the template list for the stage. Read the template's title and steps, and check they match the plan before clicking. Click **Use this** on the planned template.
+     - **The automation exists as soon as you click Use this.** A toast says "Added to <stage>." From then on it counts as created by this run. If the run stops here, it stays Off and unpublished on that stage.
+     - **With blanks** ("N to fill in"), the editor opens with a **Needs setup** badge on the step to fill in. Fill it in, then carry on from step 6 (Save draft).
+     - **Without blanks**, there's no editor. You go back to the list, where the new automation shows **Needs setup** / "Publish it before it can be turned on". If the plan says publish, click **Open** on its row, check the flow, and carry on from step 7 (Publish changes).
      - If you click **Build it myself instead**, that is the same as starting from scratch.
    - **Start from scratch** goes straight to the editor.
 4. If asked "Choose a stage", click the planned stage. Stages captioned **Quote review is off** cannot be picked.
@@ -115,6 +118,24 @@ The list above is a guide. Always read what the **template picker actually shows
 On the **Pipeline Map**, each automation card has an **On**/**Off** button.
 - Clicking it opens a confirmation showing how many deals are affected. Click **Turn it on** or **Turn it off**.
 - An automation that has never been published can't be turned on.
+- **Turning one off** warns about deals waiting part-way through it, for example on a Wait. Read the warning out to the admin before confirming.
+
+## Recipe — change an existing automation
+
+Use this for "quick change" runs (see `SKILL.md`) as well as for full setup plans.
+
+1. On `<base>/crm/automations/<pipelineId>`, click **Open** on the automation's row, or **Edit** on its card on the Pipeline Map.
+2. Change only what the plan says: rename it, change a step's settings, add a step with **+**, or reorder steps by the node's grip. Use the copy icon next to a selected node to duplicate a step. Use **Remove step** only on a step the plan says to remove.
+3. Undo and redo are at the top of the editor, for fixing your own slips.
+4. **Save draft**, then **Publish changes** if the plan says publish. Editing a published automation leaves the running version untouched until you publish. The row shows **Unpublished changes** until then.
+5. If it was On, the publish dialog doesn't ask again. The new version runs for deals arriving from then on.
+6. Verify on the Pipeline Map with **View**.
+
+**Removing an automation** is a delete. Never do it for one that existed before this run (guardrail 3). If the admin wants one gone, tell them it's under the automation's menu, and that what it already did stays on the deals.
+
+## Skipped checks
+
+The **Skipped checks** view on the automations page lists deals that a quote moved on while required work from an automation was still open. That's allowed: required work never blocks a quote being accepted. Report the count in preflight and in health checks. Don't mark anything done.
 
 ## What blocks publishing (check during the interview)
 

@@ -11,7 +11,9 @@ Always offer **Leave as is / skip this section**.
 
 Start with a scoping question (multi-select):
 > "Which parts should I set up today?"
-> Company CRM settings · Roles & who has them · Labels · Lead sources & contacts · Pipelines & stages · Automations
+> Company CRM settings · Roles & who has them · Labels · Lead sources & contacts · Pipelines & stages · Automations · Notifications · Test run at the end
+
+The structured question tool takes at most 4 options, so split the list across two multi-select questions.
 
 Then ask one context question that shapes the defaults:
 > "What kind of work does this pipeline track?"
@@ -110,6 +112,24 @@ Never remove stages in this skill.
    - each rule has a branch;
    - required settings are present.
 
+## H. Notifications (needs Manage Notifications)
+
+Show the CRM tab as it is today: each trigger, whether it's enabled, its channels and its recipients.
+
+1. "Which CRM notifications should your team get?" Multi-select from the triggers. Recommended on: assigned to you, follow-up due, follow-up overdue, tagged, daily digest.
+   - "Deal moved to a stage" can be noisy on a busy board. Recommend it Off unless the team is small.
+2. "Through which channels?" Email · Push (the mobile app) · In-app alert. Recommended: in-app alert plus email. Push only if the team uses the WeQuote mobile app.
+3. For the follow-up triggers only: "Also tell the deal's owner and/or watchers?" Recommended: the owner for **overdue**, nobody extra for the others.
+4. Don't offer to edit message wording unless the admin asks. If they do, take the exact new text.
+
+Warn that a trigger which is enabled with no channel delivers nothing.
+
+## I. Test run (optional, at the end)
+
+Offer this only if automations were planned. Explain what it does (see `test-run.md`): it creates one clearly named test deal, which shows to everyone who can see all deals, then archives it at the end. Ask:
+- **Run the test after setup** (Recommended on a test or staging organisation)
+- **Skip it**
+
 ## Defaults when the admin says "just set it up sensibly"
 
 Propose a full plan built from these defaults, and still show it for approval:
@@ -122,3 +142,5 @@ Propose a full plan built from these defaults, and still show it for approval:
   - Won: the hand-over template.
   - Lost: the record-reason template, with label **Cold**, or ask.
 - Re-run: the company default, unchanged.
+- Notifications: as recommended in section H, only if the admin has Manage Notifications.
+- No test run unless the admin asks for one.

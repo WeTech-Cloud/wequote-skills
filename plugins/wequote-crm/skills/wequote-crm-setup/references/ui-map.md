@@ -2,7 +2,7 @@
 
 `<base>` = `https://<host>/<org>`. Labels in **bold** are the exact on-screen text. Custom dropdowns, icon grids and colour swatches have to be clicked; plain `<select>` and text inputs can be set with `form_input`. After every save, wait for the modal to close or the button to re-enable, then verify the result.
 
-Run the sections in this order: company settings → roles → users → labels → sources → pipelines → stages → automations (see `automations.md`).
+Run the sections in this order: company settings → roles → users → labels → sources → pipelines → stages → automations (see `automations.md`) → notification triggers.
 
 ---
 
@@ -132,7 +132,9 @@ If the bar says "N deals move to Archive on save", a stage was removed. Click **
 
 New deals can only enter **Qualified**, or a custom stage placed in the Qualified segment, so tell the admin when an early stage sits elsewhere.
 
-Verify: the board shows the lanes in the planned order, with the planned probabilities. In Review and Passed Review stay hidden while quote review is off.
+Verify:
+- The board shows the lanes in the planned order. In Review and Passed Review stay hidden while quote review is off.
+- The board itself doesn't show probabilities. To check them, open **Manage pipeline stages** again: each lane shows its **Probability** select. Read the values, then click **Cancel** in the floating bar. Alternatively, use a column's menu → **Edit stage**, read it, and close with **Cancel**.
 
 ## 8. Automations
 
@@ -140,6 +142,38 @@ See `automations.md`.
 - Hub: `<base>/crm/automations`.
 - Pipeline: `<base>/crm/automations/<pipelineId>`.
 - Map: add `?view=map`.
+
+## 9. CRM notification triggers — `<base>/settings/notifications/triggers`
+
+Needs **Manage Notifications** on the admin's role.
+
+- The page has a tab per module. Open the **CRM** tab. The number on each tab is how many triggers it holds.
+- Each row is one trigger, with these columns:
+  - **Notification**: the trigger name and description.
+  - **Recipients**: who gets it. Some triggers have fixed recipients, shown as text. Others have a picker ("Select recipients" / "N selected") where you can add the deal's owner and/or watchers on top of the person it is for.
+  - **Channels**: a picker with **Email**, **Push** and the in-app alert ("Select channels" / "N channels").
+  - **Enabled**: a toggle. Some triggers are always on ("Always" / "Managed by WeQuote") and have no toggle.
+  - **Edit**: opens the email message editor for that trigger. Only change the message if the plan says so, and only the wording.
+- A row highlighted with a warning icon is enabled but has no channel, so nothing is delivered. Point it out in preflight.
+- Changes are held until you click **Save** (or **Discard changes**). Saving shows "Saving…".
+
+The CRM triggers, using the wording the CRM guide uses:
+
+| Trigger | Who it's for | What you can change |
+|---|---|---|
+| Lead / Deal assigned to you | The new owner, and watchers | Channels, on/off |
+| Follow-up assigned to you | The person it's assigned to | Also send to the deal's owner and/or watchers; channels; on/off |
+| Follow-up due soon | The assignee (or the owner if unassigned) | Also send to owner/watchers; channels; on/off |
+| Follow-up overdue | The assignee (or the owner if unassigned) | Also send to owner/watchers; channels; on/off |
+| You were tagged | The people @mentioned | Channels, on/off |
+| Deal moved to a stage | The deal's owner and watchers | Channels, on/off |
+| Daily digest | Owners and watchers: records quiet for 14 days, quotes unanswered for 7 days | Channels, on/off |
+
+The names on screen can differ slightly. Match by description, and read the actual list before asking the admin.
+
+Some quote notifications (proposal viewed, accepted, expired) also reach the deal's owner and watchers. They're on the **Quotes** tab. Leave them alone unless the plan names them.
+
+Verify: reload the page, open the **CRM** tab, and check each changed row.
 
 ## Useful read-only URLs
 

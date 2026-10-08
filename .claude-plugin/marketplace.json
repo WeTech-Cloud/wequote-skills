@@ -11,7 +11,7 @@
     {
       "name": "wequote-crm",
       "source": "./plugins/wequote-crm",
-      "description": "Set up the WeQuote CRM for your organisation through your browser: company settings, roles, labels, lead sources, pipelines, stages and automations — with checks, questions and a plan you approve first."
+      "description": "Set up and work the WeQuote CRM through your browser: settings, roles, labels, sources, pipelines, stages, automations and notifications; leads and deals (create, convert, spreadsheet entry, move, win/lose, notes); health checks, reports and automation test runs \u2014 with a plan you approve first."
     }
   ]
 }

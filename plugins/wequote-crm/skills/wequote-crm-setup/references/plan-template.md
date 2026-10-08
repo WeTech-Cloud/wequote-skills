@@ -13,7 +13,7 @@ Tags:
 Prepared <date> for <admin name>. Nothing has been changed yet.
 
 ## Summary
-- 1 company setting · 2 roles · 3 users · 2 labels · 1 source + 2 contacts · 1 pipeline · 3 stages · 4 automations
+- 1 company setting · 2 roles · 3 users · 2 labels · 1 source + 2 contacts · 1 pipeline · 3 stages · 4 automations · 2 notifications · 1 test run
 - ⚠️ Changes apply to everyone immediately.
 
 ## Steps (in this order)
@@ -30,6 +30,9 @@ Prepared <date> for <admin name>. Nothing has been changed yet.
 | 8 | Pipelines | SKIP | **Sales Pipeline** (Quotes) — kept as is | – |
 | 9 | Stages | CREATE | Sales Pipeline: **Site Visit** — after Qualified · 20% · Flag · #B97A00 | CRM → Deals → Manage pipeline stages |
 | 10 | Automations | CREATE | See A1–A4 below | CRM → Automations |
+| 11 | Notifications | UPDATE | CRM › Follow-up overdue: channels Alert → **Alert + Email**, also send to **the deal's owner** | Settings → Notifications → Triggers → CRM |
+| 12 | Notifications | UPDATE | CRM › Deal moved to a stage: Enabled On → **Off** | same |
+| 13 | Test run | CREATE | Test deal **TEST – CRM check <date>** in Sales Pipeline › Qualified, then archive it (see `test-run.md`) | CRM → Deals |
 
 ## Resulting pipelines
 

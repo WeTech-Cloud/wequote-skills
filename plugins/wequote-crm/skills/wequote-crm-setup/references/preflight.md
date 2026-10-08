@@ -38,6 +38,7 @@ Run every check before the interview. Nothing in this file clicks a save, create
 ## 6. Companies (for automation company scope)
 - **How:** open `<base>/settings/secondary`.
 - If there is only one company, the automation **Company scope** card doesn't appear. Skip scope questions.
+- If the page shows **Access denied**, secondary companies aren't available to this organisation or this role. Record it as ⚠️ "Single company (Secondary Companies not available)" and skip the scope questions. Confirm it in the automation editor: the **Company scope** card is absent.
 
 ## 7. Inventory snapshot
 
@@ -50,12 +51,18 @@ Record each of these in a compact list. You'll need it for the interview, the pl
 | Lead sources and contacts | `<base>/crm/leads`, **Lead sources** tab. The left rail lists the sources, and the right panel lists contacts. | Source names, contact name/company/email |
 | CRM labels | `<base>/settings/configure/labels`, the **CRM Labels** card | Text, colour |
 | Quote labels | same page, the quote labels card | Text |
-| Interests | the Interests picker in **Create Lead** (open it, read it, then Cancel). Interests are the organisation's Systems and are not created here. | Names |
+| Interests | the Interests picker in **Create Lead** (open it, read it, then Cancel). Interests are the organisation's **Systems**, managed under **Quote & Sales**. They can't be created or renamed from the CRM. If the admin wants new ones, tell them to add the Systems themselves. | Names, or "none" |
 | Users | `<base>/settings/user`, **Users** tab | Name, role, root/elevated badges |
 | Roles | the **User Roles** tab | Name, built-in or not (built-in roles have no edit pencil), CRM row badges (Access CRM / Manage Configurations / Can See All Sales Data). Green means granted, red means not. |
-| Automations | `<base>/crm/automations/<pipelineId>`, the list view grouped by stage. Optionally **Open Pipeline Map** for On/Off. | Name, stage, readiness (Needs setup / Unpublished changes / Published), On/Off |
+| Automations | `<base>/crm/automations/<pipelineId>`, the list view. Its filters are **All / Active / Inactive / Not published** and **Needs setup**. Use **Open Pipeline Map** for On/Off per stage. | Name, stage, readiness (Needs setup / Unpublished changes / Published), On/Off |
+| Skipped checks | the **Skipped checks** link on the same page. It lists deals a quote carried past required work that wasn't finished. | Count, and which automations they came from |
+| Notification triggers | `<base>/settings/notifications/triggers`, the **CRM** tab (only if notifications are in scope; needs **Manage Notifications**) | Each trigger: Enabled, Channels, Recipients, and whether the message is Customised |
 
-## 8. Clean starting state
+## 8. Manage Notifications (only if notifications are in scope)
+- **How:** the admin's role shows **Manage Notifications** green on the **User Roles** tab, and `<base>/settings/notifications/triggers` opens.
+- **⚠️ if not:** remove "Notifications" from scope, tell the admin, and carry on.
+
+## 9. Clean starting state
 - **How:** look for open modals and editors showing "Unsaved changes". Also look for a Deals board in stage-manage mode, which has a floating bar with **Save changes**.
 - **⚠️ if found:** the admin may have unsaved work. Ask before cancelling anything.
 
